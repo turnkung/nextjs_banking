@@ -97,8 +97,8 @@ const AuthForm = ({ type }: { type: string }) => {
                     </h1>
                 </div>
             </header> */}
-            {!user ? (<div className="flex flex-col gap-4">
-                {/* <PlaidLink user={user} variant="primary" /> */}
+            {user ? (<div className="flex flex-col gap-4">
+                <PlaidLink user={user} variant="primary" />
                 <div className="text-center space-y-4 pt-16">
                     <p className="text-base text-[#7E8CA0]">
                         Before continue i recommended to choose &quot;CHASE&quot; in select institution step.
