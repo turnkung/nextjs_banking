@@ -150,11 +150,13 @@ const AuthForm = ({ type }: { type: string }) => {
                             {type === 'sign-in' ? "Sign Up" : "Sign In"}
                         </Link>
                     </footer>
-                    <div className="flex flex-col">
-                        <p className="text-base text-[#7E8CA0]">
-                            Your information will not be used and no need to fill in actual information.
-                        </p>
-                    </div>
+                    {type === 'sign-up' && (
+                        <div className="flex flex-col">
+                            <p className="text-base text-[#7E8CA0]">
+                                Your information will not be used and no need to fill in actual information.
+                            </p>
+                        </div>
+                    )}
                 </>
             )}
         </section>
