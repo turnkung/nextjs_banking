@@ -200,7 +200,7 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                         <FormItem className="border-t border-gray-200">
                             <div className="payment-transfer_form-item pb-5 pt-6">
                                 <FormLabel className="text-14 w-full max-w-[280px] font-medium text-gray-700">
-                                    Receiver&apos;s Plaid Sharable Id
+                                    Receiver&apos;s Account Number
                                 </FormLabel>
                                 <div className="flex w-full flex-col">
                                     <FormControl>
