@@ -169,7 +169,7 @@
 
   .profile-img {
     /* @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile; */
-    @apply flex-center size-10 rounded-full bg-gray-100 border-white p-2 shadow-profile;
+      @apply flex-center size-10 rounded-full bg-gray-100 border-white p-2 shadow-profile;
   }
 
   .profile-details {
@@ -294,11 +294,11 @@
   }
 
   .form-btn {
-    @apply text-16 rounded-lg border border-bankGradient bg-bank-gradient font-semibold text-white shadow-form;
+    @apply text-16 rounded-lg border border-none bg-gray-800 font-semibold text-white shadow-form;
   }
 
   .form-link {
-    @apply text-14 cursor-pointer font-medium text-bankGradient;
+    @apply text-14 cursor-pointer font-medium;
   }
 
   /* Payment Transfer */
@@ -380,9 +380,5 @@
 
   .sidebar-label {
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
-  }
-
-  .top-categories-label {
-    @apply text-20 md:text-24 font-semibold text-gray-900;
   }
 }
