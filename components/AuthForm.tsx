@@ -69,7 +69,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     </h1>
                     {!user && (
                         <p className="text-base text-[#7E8CA0]">
-                            Plase sign in or create account to continue.
+                            Please sign in or create account to continue.
                         </p>
                     )}
                 </div>
@@ -97,8 +97,16 @@ const AuthForm = ({ type }: { type: string }) => {
                     </h1>
                 </div>
             </header> */}
-            {user ? (<div className="flex flex-col gap-4">
-                <PlaidLink user={user} variant="primary" />
+            {!user ? (<div className="flex flex-col gap-4">
+                {/* <PlaidLink user={user} variant="primary" /> */}
+                <div className="text-center space-y-4 pt-16">
+                    <p className="text-base text-[#7E8CA0]">
+                        Before continue i recommended to choose &quot;CHASE&quot; in select institution step.
+                        And in login process you can skip the sign in step by click &quot;Sign in&quot; button
+                        without filling any information then click &quot;Get code&quot; and &quot;Submit&quot;
+                        and then select the account you want then click &quot;Continue&quot; and follows the remain steps.
+                    </p>
+                </div>
             </div>) : (
                 <>
                     <Form {...form}>
@@ -142,6 +150,11 @@ const AuthForm = ({ type }: { type: string }) => {
                             {type === 'sign-in' ? "Sign Up" : "Sign In"}
                         </Link>
                     </footer>
+                    <div className="flex flex-col">
+                        <p className="text-base text-[#7E8CA0]">
+                            Your information will not be used and no need to fill in actual information.
+                        </p>
+                    </div>
                 </>
             )}
         </section>
