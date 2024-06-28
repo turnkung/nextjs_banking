@@ -54,3 +54,16 @@ export const getTransactionsByBankId = async ({ bankId }: getTransactionsByBankI
         console.error('Error getTransactionsByBankId', error);
     }
 }
+
+export const getTransactionById = async (transactionId: string) => {
+    try {
+        const { database } = await createAdminClient();
+        const transactionData = await database.listDocuments(
+            DATABSE_ID!, TRANSACTION_COLLECTION_ID!,
+            [Query.equal('$id', transactionId)]
+        );
+        return parseStringify(transactionData.documents[0]);
+    } catch (error) {
+        console.error('Error getTransactionById', error);
+    }
+}
