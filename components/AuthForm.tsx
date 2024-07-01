@@ -19,6 +19,7 @@ const AuthForm = ({ type }: { type: string }) => {
     const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const fromSchema = authFormSchema(type);
 
@@ -52,13 +53,15 @@ const AuthForm = ({ type }: { type: string }) => {
                     password: data.password,
                 });
 
-                if (response) {
+                if (response.code === 200) {
                     setIsSuccess(true);
                     router.push("/");
+                } else {
+                    setErrorMessage(response.response.message);
                 }
             }
         } catch (error) {
-            console.error('Erro signInOnSubmit', error);
+            console.error('Error signInOnSubmit', error);
         } finally {
             if (!isSuccess) setIsLoading(false);
         }
@@ -138,6 +141,17 @@ const AuthForm = ({ type }: { type: string }) => {
 
                                 <CustomInput control={form.control} name="password" label="Password"
                                     placeholder="Enter your password" />
+
+
+
+                                {errorMessage && (
+                                    <div className="flex flex-col gap-2">
+                                        <p className="text-rose-700 text-xs">
+                                            {errorMessage}
+                                        </p>
+                                    </div>
+                                )}
+
 
                                 <div className="flex flex-col gap-4">
                                     <Button type="submit" className="form-btn" disabled={isLoading}>
