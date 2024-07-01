@@ -112,7 +112,7 @@ const TransactionPage = async ({ searchParams: { id, page } }: SearchParamProps)
                                 </div>
                             </DialogHeader>
 
-                            <ScrollArea className="h-4/6">
+                            <ScrollArea className="md:h-3/6 lg:h-4/6">
                                 <div className="size-full pt-5 ml-12 justify-center items-center">
                                     <PaymentTransferForm accounts={accountsData} />
                                 </div>
