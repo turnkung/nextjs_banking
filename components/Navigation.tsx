@@ -16,10 +16,6 @@ const routes = [
         href: "/transactions",
         label: "Transactions",
     },
-    {
-        href: "/accounts",
-        label: "Accounts",
-    }
 ]
 
 const Navigation = () => {
