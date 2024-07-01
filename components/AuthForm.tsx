@@ -53,6 +53,8 @@ const AuthForm = ({ type }: { type: string }) => {
                     password: data.password,
                 });
 
+                console.log(response);
+
                 if (response.code === 201) {
                     setIsSuccess(true);
                     router.push("/");
