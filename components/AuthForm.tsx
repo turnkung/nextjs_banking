@@ -60,7 +60,7 @@ const AuthForm = ({ type }: { type: string }) => {
         } catch (error) {
             console.error('Erro signInOnSubmit', error);
         } finally {
-            setIsLoading(false);
+            if (!isSuccess) setIsLoading(false);
         }
     }
 
