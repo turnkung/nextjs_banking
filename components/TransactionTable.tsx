@@ -64,7 +64,7 @@ const TransactionTable = ({ transactions }: TransactionTableProps) => {
                             <TableCell className="min-2-32 pl-2 pr-10">
                                 {formatDateTime(new Date(t.date)).dateTime}
                             </TableCell>
-                            <TableCell className="pl-2 pr-10 capitalize min-w-24">
+                            <TableCell className="pl-2 pr-10 capitalize min-w-24 max-md:hidden">
                                 {t.paymentChannel}
                             </TableCell>
                             {/* <TableCell className="pl-2 pr-10 max-md:hidden"> */}
